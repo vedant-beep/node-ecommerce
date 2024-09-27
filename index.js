@@ -1,16 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
-const PORT = 5000;
+const connectDB = require('./config/db');
+const userRoutes = require('./routes/userRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
-// Middleware
+const app = express();
+connectDB();
+
 app.use(express.json());
 
-// MongoDB connection
-mongoose.connect('mongodb://0.0.0.0:27017/ecommerce', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+app.use('/api/users', userRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
 
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
