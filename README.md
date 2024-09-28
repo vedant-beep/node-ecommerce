@@ -44,5 +44,6 @@ This E-Commerce website simulates a platform similar to Amazon or Flipkart, allo
 - /api/orders/place-order
 - /api/orders/orders (get orders)
 - /api/cart/add-to-cart
+- /api/orders/checkout
 - /api/users/logout
 
