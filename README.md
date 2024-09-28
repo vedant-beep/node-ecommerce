@@ -31,8 +31,10 @@ This E-Commerce website simulates a platform similar to Amazon or Flipkart, allo
     git clone https://github.com/vedant-beep/node-ecommerce.git
     cd node-ecommerce
     npm install
-    PORT=5000
-    MONGODB_URI=your_mongodb_connection_string
+    ```
+    **Create .env file and add the following**:\
+    PORT=5000\
+    MONGODB_URI=your_mongodb_connection_string\
     JWT_SECRET=your_jwt_secret
 
 ### Customization
